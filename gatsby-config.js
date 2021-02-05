@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://3398e7562a36.ngrok.io/`,
+        baseUrl: `http://67eb5c284fa2.ngrok.io/poc-pantheon-two/web`,
         apiBase: `jsonapi`,
         basicAuth: {
           username: `admin`,
