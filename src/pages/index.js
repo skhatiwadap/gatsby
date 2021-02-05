@@ -7,6 +7,8 @@ const IndexPage = ({data}) => {
   return (
     <IndexLayout>
       <>
+      <div>{data.allNodeArticle.edges[0].node.body.processed}</div>
+      <div>{data.allNodeArticle.edges[0].node.body.value}</div>
       <div dangerouslySetInnerHTML={{__html: data.allNodeArticle.edges[0].node.body.processed}}></div>
       </>
     </IndexLayout>
