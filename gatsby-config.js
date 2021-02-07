@@ -15,10 +15,10 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `https://67eb5c284fa2.ngrok.io/poc-pantheon-drupal/web/`,
+        baseUrl: `http://904bdb5cdd8b.ngrok.io/poc-pantheon-two/web/`,
         apiBase: `jsonapi`,
         basicAuth: {
-          username: `admin`,
+          username: `admin@wampserver.invalid`,
           password: `admin`
         },
       }
