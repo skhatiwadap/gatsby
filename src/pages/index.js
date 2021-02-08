@@ -11,6 +11,7 @@ const IndexPage = ({data}) => {
         data.allNodeHomePage.edges.map((item, i) => (
           <>
           <div style={{display: "flex", "flex-direction": (i % 2 === 0 ? "row-reverse": "row")}}> 
+            <h3>{item.node.title}</h3>
             <div dangerouslySetInnerHTML={{__html: item.node.body.value}}></div>
             <img style={{width: '40%'}} src={item.node.relationships.field_side_image.localFile.url} alt='' />
           </div>
@@ -31,6 +32,7 @@ query allNodeHomePageQuery {
         body {
           value
         }
+        title
         relationships {
           field_side_image {
             localFile {
