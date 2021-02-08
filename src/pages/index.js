@@ -2,6 +2,7 @@ import * as React from "react";
 import IndexLayout from "../layouts";
 import { graphql } from 'gatsby'
 
+
 // markup
 const IndexPage = ({data}) => {
   return (
