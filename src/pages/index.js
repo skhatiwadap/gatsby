@@ -7,27 +7,40 @@ const IndexPage = ({data}) => {
   return (
     <IndexLayout>
       <>
-      {/* <div>{data.allNodeArticle.edges[0].node.body.processed}</div>
-      <div>{data.allNodeArticle.edges[0].node.body.value}</div>
-      <div dangerouslySetInnerHTML={{__html: data.allNodeArticle.edges[0].node.body.processed}}></div> */}
+      {
+        data.allNodeHomePage.edges.map((item, i) => (
+          <>
+          <div style={{display: "flex", "flex-direction": (i % 2 === 0 ? "row-reverse": "row")}}> 
+            <div dangerouslySetInnerHTML={{__html: item.node.body.value}}></div>
+            <img style={{width: '40%'}} src={item.node.relationships.field_side_image.localFile.url} alt='' />
+          </div>
+          <br />
+          </>
+        ))
+      }
       </>
     </IndexLayout>
   ) 
 }
 
-// export const query = graphql`
-// query IndePageQuery {
-//   allNodeArticle {
-//      edges{
-//       node {
-//         id
-//         body {
-//           value
-//           processed
-//         }
-//       }
-//     }
-//   }
-// }`;
+export const query = graphql`
+query allNodeHomePageQuery {
+  allNodeHomePage {
+     edges{
+      node {
+        body {
+          value
+        }
+        relationships {
+          field_side_image {
+            localFile {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}`;
 
 export default IndexPage

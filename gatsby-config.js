@@ -6,7 +6,7 @@ module.exports = {
       content: 'Pantheon Gatsby POC'
     },
     footer: {
-      backgroundColor: 'green',
+      backgroundColor: 'tomato',
       content: 'Footer @2021'
     }
   },
@@ -15,10 +15,10 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://904bdb5cdd8b.ngrok.io/poc-pantheon-two/web/`,
+        baseUrl: `https://904bdb5cdd8b.ngrok.io/poc-pantheon-drupal/web/`,
         apiBase: `jsonapi`,
         basicAuth: {
-          username: `admin@wampserver.invalid`,
+          username: `admin`,
           password: `admin`
         },
       }
