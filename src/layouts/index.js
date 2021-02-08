@@ -23,7 +23,7 @@ const IndexLayout = ({children}) => {
   )
   return (
     <div class='container'>
-      Hey This is my change! Horray!!!
+      <h2>Hey This is my change! Horray!!!</h2>
       <div style={{backgroundColor: data.site.siteMetadata.header.backgroundColor, padding: '1em'}}>
           <h1>{data.site.siteMetadata.header.content}</h1>
       </div>
