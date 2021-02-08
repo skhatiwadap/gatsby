@@ -11,6 +11,9 @@ const IndexPage = ({data}) => {
       {
         data.allNodeHomePage.edges.map((item, i) => (
           <>
+            <div>
+              This is preview of upcoming change.
+            </div>
             <h3>{item.node.title}</h3>
             <div style={{display: "flex", "flex-direction": (i % 2 === 0 ? "row-reverse": "row")}}> 
               <div dangerouslySetInnerHTML={{__html: item.node.body.value}}></div>
