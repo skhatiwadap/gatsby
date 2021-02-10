@@ -8,12 +8,12 @@ const IndexPage = ({data}) => {
     <IndexLayout>
       <>
       {
-        data.allNodeHomePage.edges.map((item, i) => (
+        data.allNodeHomePageContent.edges.map((item, i) => (
           <>
             <h3>{item.node.title}</h3>
             <div style={{display: "flex", "flex-direction": (i % 2 === 0 ? "row-reverse": "row")}}> 
               <div dangerouslySetInnerHTML={{__html: item.node.body.value}}></div>
-              <img style={{width:'40%'}} src={item.node.relationships.field_side_image.localFile.url} alt='' />
+              <img style={{width:'20%', margin: 10}} src={item.node.relationships.field_side_image.localFile.url} alt='' />
             </div>
             <br />
           </>
@@ -25,8 +25,8 @@ const IndexPage = ({data}) => {
 }
 
 export const query = graphql`
-query allNodeHomePageQuery {
-  allNodeHomePage {
+query allNodeHomePageContentQuery {
+  allNodeHomePageContent {
      edges{
       node {
         body {

@@ -1,10 +1,5 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const loc = require("path");
 
-const loc = require("path")
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const tpl_page = loc.resolve(`src/templates/pages.js`);
@@ -13,9 +8,6 @@ exports.createPages = async ({ graphql, actions }) => {
       pages: allNodePage {
         edges {
           node {
-            fields {
-              slug
-            }
             title
             path {
               alias
@@ -31,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: node.path.alias,
       component: tpl_page,
       context: {
-        slug: node.fields.slug,
+        slug: node.path.alias,
       },
     })
   })

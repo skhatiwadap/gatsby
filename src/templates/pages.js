@@ -3,11 +3,12 @@ import { graphql } from 'gatsby'
 
 import Layout from "../layouts"
 
-const RecipeTemplate = ({ data }) => (
+const RecipeTemplate = ({ data }) => {
+    return (
   <Layout>
     <div dangerouslySetInnerHTML={{__html: data.node.body.value}}></div>
   </Layout>
-)
+)}
 
 export const query = graphql`
 query ($slug: String!) {
@@ -16,8 +17,6 @@ query ($slug: String!) {
         value
       }
     }
-  }
-  
-  `;
+  }`;
 
 export default RecipeTemplate
